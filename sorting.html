@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+    <title>SORTING</title>
+    <link rel="stylesheet" href="tower_of_hanoi/main.css">
+</head>
+<body>
+    <header id="header">
+        <p>IMPLEMENTING SORTING</p>
+    </header>
+    <hr>
+
+    <style>
+        .container{
+            background-color: #ff9; 
+            opacity: 0.9;
+            margin-top: 60px;
+            margin-left:230px;
+            padding:20px;
+            border:1.2px solid #030;
+            border-top:15px solid #030;
+            width:70%;
+            height:560px;
+            align-items: center;
+            font-size:25px;
+            box-shadow: 0px 3px 5px rgba(0, 2, 0, 5.2);
+        }
+        .buttons{
+            height:30px;
+            width:120px;
+            background-color: #c60;
+            font-size:18px;
+            color: black;
+            border-radius: 8px;
+        }
+        #print{
+            margin-left: 100px;
+            margin-right: 60px;
+            font-size:25px;
+            text-emphasis: bolder;
+            font-weight: 600;
+        }
+    </style>
+
+    <div class="container">
+         <div class="bar" id="start">
+                Enter number or string:<input id="number" placeholder="input">
+            </div>
+            <div id="enter">
+                <button type="button" class="buttons" id="enterButton" onclick="enter()">
+                    ENTER
+                </button>
+            </div>
+            <div class="bar" id="print">
+                    <hr>
+                ARRAY: <span>[</span><span id="printArray"></span> <span>]</span>
+                <hr>
+                </div>
+            <div class="bar" id="answer">
+                    Array:<span>[</span><span id="bubbleAnswer" class="answer"></span><span>]</span>
+                </div>
+                <div id="empty">
+                <button type="button" class="buttons" id="bubbleButton" onclick="bubble()">
+                    BUBBLE
+                </button>
+            <div class="bar" id="answer">
+                    Array:<span>[</span><span id="selectAnswer" class="answer"></span><span>]</span>
+                </div>
+                <div id="empty">
+                <button type="button" class="buttons" id="selectButton" onclick="selection()">
+                    SELECTION
+                </button>
+            <div class="bar" id="answer">
+                    Array:<span>[</span><span id="insertAnswer" class="answer"></span><span>]</span>
+                </div>
+                <div id="empty">
+                <button type="button" class="buttons" id="insertButton" onclick="insertion()">
+                    INSERTION
+                </button>
+            <div class="bar" id="answer">
+                    Array:<span>[</span><span id="quickAnswer" class="answer"></span><span>]</span>
+                </div>
+                <div id="empty">
+                <button type="button" class="buttons" id="quickButton" onclick="quick()">
+                    QUICK
+                </button>
+            <div class="bar" id="answer">
+                    Array:<span>[</span><span id="mergeAnswer" class="answer"></span><span>]</span>
+                </div>
+                <div id="empty">
+                <button type="button" class="buttons" id="mergeButton" onclick="merge()">
+                    MERGE
+                </button>
+    </div>
+
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="bubble.js"></script>
+</body>
+</html>

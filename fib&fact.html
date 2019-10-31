@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FIBONACCI AND FACTORIAL</title>
+    <link rel="stylesheet" type="text/css" href="tower_of_hanoi/main.css">
+</head>
+<body>
+    <style>
+        body{
+            background-color:#699;
+        }
+        .container{
+            background-color: #ff9; 
+            opacity: 0.9;
+            margin-top: 70px;
+            margin-left:350px;
+            padding:20px;
+            border:1.2px solid #030;
+            border-top:15px solid #030;
+            width:55%;
+            height:400px;
+            align-items: center;
+            box-shadow: 0px 3px 5px rgba(0, 2, 0, 5.2);
+        }
+        .bar{
+            text-align:left;
+        }
+        .buttons{
+            height:35px;
+            width:120px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #c60;
+            font-size:20px;
+            color:black;
+        }
+        #answer{
+            padding-top:15px;
+            font-size:22px;
+            color: #000;
+        }
+        
+    </style>
+    <header id="header">
+        <p>Factorial and Fibonacci numbers</p>
+        
+    </header>
+    <hr><!-- /header -->
+    <div class="container">
+        
+        <div class="bar" id="first">
+            FACTORIAL  INPUT:<input type="number" id="factNo">
+    </div>
+        <div class="bar" id="answer">
+            Answer:<span id="factAnswer"></span>
+    </div>
+        <div id="factorial">
+            <button type="button" class="buttons" id="factButton">
+                Start
+            </button>
+
+        <div class="bar" id="second">
+            FIBONACCI  INPUT:<input type="number" id="fibNo">
+    </div>
+        <div class="bar" id="answer">
+            Answer:<span id="fibAnswer"></span>
+    </div>
+        <div id="fibonacci">
+            <button type="button" class="buttons" id="fibButton">
+                Start
+            </button>
+        </div>
+        
+    </div>
+
+        <script src="https:cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="tower_of_hanoi/factorial.js"></script>
+
+</body>
+</html>
