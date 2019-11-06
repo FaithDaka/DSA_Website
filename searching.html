@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+    <title>SEARCHING</title>
+    <link rel="stylesheet" href="tower_of_hanoi/main.css">
+</head>
+<body>
+    <header id="header">
+        <p>IMPLEMENTING SEARCHING</p>
+    </header>
+    <hr>
+
+    <style>
+        .container{
+            background-color: #ff9; 
+            opacity: 0.9;
+            margin-top: 50px;
+            margin-left:270px;
+            padding:30px;
+            border:1.2px solid #030;
+            border-top:15px solid #030;
+            width:60%;
+            height:550px;
+            align-items: center;
+            font-size:25px;
+            box-shadow: 0px 3px 5px rgba(0, 2, 0, 5.2);
+        }
+        .buttons{
+            height:40px;
+            width:150px;
+            background-color: #c60;
+            font-size:17px;
+            color: black;
+            border-radius: 8px;
+        }
+        #answer{
+            color:red;
+            font-size: 18px;
+            text-transform: capitalize;
+        }
+        #print{
+            margin-left: 100px;
+            margin-right: 60px;
+            font-size:25px;
+            text-emphasis: bolder;
+            font-weight: 600;
+        }
+    </style>
+
+    <div class="container">
+         <div class="bar" id="start">
+                Enter number:<input id="number" placeholder="input">
+            </div>
+            <div id="enter">
+                <button type="button" class="buttons" id="enterButton" onclick="enter()">
+                    ENTER
+                </button>
+            </div>
+            <div class="bar" id="print">
+                    <hr>
+                ARRAY: <span>[</span><span id="printArray"></span> <span>]</span>
+                <hr>
+            </div>
+            <div class="bar">
+                <input id="binary" placeholder="input">
+                <span>index: </span><span id="binaryAnswer"></span>
+            </div>
+            <div class="bar" id="answer">
+                Time:<span id="binaryTime" class="time"></span>
+            </div>
+            <div id="empty">
+            <button type="button" class="buttons" id="emptyButton" onclick="binary()">
+                Binary()
+            </button>
+            <div class="bar">
+                <input id="order" placeholder="input">
+                <span>Index: </span><span id="orderAnswer"></span>
+            </div>
+            <div class="bar" id="answer">
+                Time:<span id="orderTime" class="time"></span>
+            </div>
+            <div id="empty">
+            <button type="button" class="buttons" id="emptyButton" onclick="ordered()">
+                ordered()
+            </button>
+            <div class="bar">
+                <input id="unorder" placeholder="input">
+                <span>index: </span><span id="unorderAnswer"> </span>
+            </div>
+            <div class="bar" id="answer">
+                Time:<span id="unorderTime" class="time"></span>
+            </div>
+            <div id="empty">
+            <button type="button" class="buttons" id="emptyButton" onclick="unordered()">
+                unordered()
+            </button>
+
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="searching.js"></script>
+</body>
+</html>

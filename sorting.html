@@ -13,13 +13,13 @@
         .container{
             background-color: #ff9; 
             opacity: 0.9;
-            margin-top: 60px;
+            margin-top: 30px;
             margin-left:230px;
             padding:20px;
             border:1.2px solid #030;
             border-top:15px solid #030;
             width:70%;
-            height:560px;
+            height:600px;
             align-items: center;
             font-size:25px;
             box-shadow: 0px 3px 5px rgba(0, 2, 0, 5.2);
@@ -32,6 +32,12 @@
             color: black;
             border-radius: 8px;
         }
+
+        #time{
+            color:red;
+            font-size: 18px;
+            text-transform: capitalize;
+        }
         #print{
             margin-left: 100px;
             margin-right: 60px;
@@ -43,7 +49,7 @@
 
     <div class="container">
          <div class="bar" id="start">
-                Enter number or string:<input id="number" placeholder="input">
+                Enter number:<input id="number" placeholder="input">
             </div>
             <div id="enter">
                 <button type="button" class="buttons" id="enterButton" onclick="enter()">
@@ -58,12 +64,18 @@
             <div class="bar" id="answer">
                     Array:<span>[</span><span id="bubbleAnswer" class="answer"></span><span>]</span>
                 </div>
+                <div class="bar" id="answer">
+                    Time:<span id="bubbleTime" class="answer"></span>
+                </div>
                 <div id="empty">
                 <button type="button" class="buttons" id="bubbleButton" onclick="bubble()">
                     BUBBLE
                 </button>
             <div class="bar" id="answer">
                     Array:<span>[</span><span id="selectAnswer" class="answer"></span><span>]</span>
+                </div>
+                <div class="bar" id="time">
+                    Time:<span id="selectTime" class="answer"></span>
                 </div>
                 <div id="empty">
                 <button type="button" class="buttons" id="selectButton" onclick="selection()">
@@ -72,6 +84,9 @@
             <div class="bar" id="answer">
                     Array:<span>[</span><span id="insertAnswer" class="answer"></span><span>]</span>
                 </div>
+                <div class="bar" id="time">
+                    Time:<span id="insertTime" class="answer"></span>
+                </div>
                 <div id="empty">
                 <button type="button" class="buttons" id="insertButton" onclick="insertion()">
                     INSERTION
@@ -79,12 +94,18 @@
             <div class="bar" id="answer">
                     Array:<span>[</span><span id="quickAnswer" class="answer"></span><span>]</span>
                 </div>
+                <div class="bar" id="time">
+                    Time:<span id="quickTime" class="answer"></span>
+                </div>
                 <div id="empty">
                 <button type="button" class="buttons" id="quickButton" onclick="quick()">
                     QUICK
                 </button>
             <div class="bar" id="answer">
                     Array:<span>[</span><span id="mergeAnswer" class="answer"></span><span>]</span>
+            </div>
+                <div class="bar" id="time">
+                    Time:<span id="mergeTime" class="answer"></span>
                 </div>
                 <div id="empty">
                 <button type="button" class="buttons" id="mergeButton" onclick="merge()">
