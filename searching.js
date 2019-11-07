@@ -1,53 +1,32 @@
 var arr = [];
 
 
-function binary_search(array, value){
-    before = new Date();
-    sorted_array = array.sort();
-    console.log(sorted_array);
-
-    low = 0;
-    high = array.length - 1;
-
+function binary_search(array, low, high, value){
     var mid = Math.ceil((low + high)/2)
-
-    if(sorted_array[mid] == value){
-        return mid;
+    if (low > high){
+        return -1
     }
-    else if(sorted_array[mid] < value){
-        low = mid +1;
+    if (value == array[mid]){
+        return mid
+    }else if (value < array[mid]){
+        return binary_search(array, low, mid - 1, value)
     }
-    else if (sorted_array[mid] > value){
-        high = mid - 1;
+    else{
+        return binary_search(array, mid + 1, high, value)
     }
-    else return -1;
-
-    var after = new Date();
-    time = after.getMilliseconds() - before.getMilliseconds();
-    document.getElementById("binaryTime").textContent = time;
-    console.log(time);
 }
 
-
 function unorderedSearch(array, value){
-    var before = new Date();
-    var sorted_array = array.sort();
-    console.log(sorted_array);
     for (var i = 0; i <= array.length; i ++){
-        console.log(sorted_array[i]);
+        console.log(array[i]);
         
-        if (sorted_array[i] == value){
+        if (array[i] == value){
             return i;
         }
     }
-    var after = new Date();
-    time = (after.getMilliseconds() - before.getMilliseconds())
-    document.getElementById("unorderTime").textContent = time;
-    console.log(time);
 }
 
 function orderedSearch(array, value){
-    var before = new Date();
     for (var i = 0; i <= array.length; i ++){
         if (array[i] > value){
             return -1
@@ -55,10 +34,6 @@ function orderedSearch(array, value){
             return i;
         }
     }
-    var after = new Date();
-    time = (after.getMilliseconds() - before.getMilliseconds());
-    document.getElementById("orderTime").textContent = time;
-    console.log(time);
 }
 
 function printA(array){
@@ -69,30 +44,63 @@ function printA(array){
     return str;
 }
 
+
 function enter(){
     number = document.getElementById("number").value;
     arr.push(number);
     print = printA(arr);
     document.getElementById("printArray").textContent = print
     console.log(print);
+    document.getElementById("number").value = "";
 }
+
+function sort(){
+    printSorted = printA(arr.sort());
+    document.getElementById("printSorted").textContent = printSorted;
+}
+
 function binary(){
+    var before = new Date();
+
     binary = document.getElementById("binary").value;
-    var value =  binary_search(arr, binary);
+    document.getElementById("binary").value = "";
+
+    var value =  binary_search(arr.sort(),0, (arr.length -1), binary);
     document.getElementById("binaryAnswer").textContent = value;
     console.log(value);
+
+    var after = new Date();
+    time = after.getMilliseconds() - before.getMilliseconds();
+    document.getElementById("binaryTime").textContent = time;
+    console.log(time);
 }
 function ordered(){
+    var before = new Date();
+
     order = document.getElementById("order").value;
-    var value = orderedSearch(arr, order);
+    document.getElementById("order").value = "";
+    var value = orderedSearch(arr.sort(), order);
     document.getElementById("orderAnswer").textContent = value;
-    console.log(value)
+    console.log(value);
+
+    var after = new Date();
+    time = after.getMilliseconds() - before.getMilliseconds();
+    document.getElementById("orderTime").textContent = time;
+    console.log(time);
 
 }
 function unordered(){
+    var before = new Date();
+    
     unorder = document.getElementById("unorder").value;
-    var value = unorderedSearch(arr, unorder);
+    document.getElementById("unorder").value = "";
+    var value = unorderedSearch(arr.sort(), unorder);
     document.getElementById("unorderAnswer").textContent = value;
-    console.log(value)
+    console.log(value);
+
+    var after = new Date();
+    time = after.getMilliseconds() - before.getMilliseconds();
+    document.getElementById("unorderTime").textContent = time;
+    console.log(time);
 
 }

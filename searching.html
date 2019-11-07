@@ -51,13 +51,17 @@
                 Enter number:<input id="number" placeholder="input">
             </div>
             <div id="enter">
-                <button type="button" class="buttons" id="enterButton" onclick="enter()">
+                <button type="button" class="buttons" id="enterButton" onclick="enter(), sort()">
                     ENTER
                 </button>
             </div>
             <div class="bar" id="print">
                     <hr>
                 ARRAY: <span>[</span><span id="printArray"></span> <span>]</span>
+                <hr>
+                <div>
+                SORTED: <span>[</span><span id="printSorted"></span> <span>]</span>
+                </div>
                 <hr>
             </div>
             <div class="bar">
