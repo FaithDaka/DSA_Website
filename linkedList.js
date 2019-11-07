@@ -136,21 +136,10 @@ function input(){
     list.add(number1)
     console.log(this.list)
 
-    number2 = document.getElementById("number2").value;
-    list.add(number2)
-    console.log(this.list)
-
-    number3 = document.getElementById("number3").value;
-    list.add(number3)
-    console.log(this.list)
-
-    number4 = document.getElementById("number4").value;
-    list.add(number4)
-    console.log(this.list)
-
 }
 
 function enter(){
+    document.getElementById("number1").value = "";
     var print = list.printList()
     document.getElementById("printList").textContent = print
     console.log(print);
@@ -158,17 +147,21 @@ function enter(){
 function addBegin(){
     begin = document.getElementById("begin").value;
     list.insertAt(begin, 0);
+    document.getElementById("begin").value = "";
     console.log(this.list);              
 }
 function addAt(){
     insert = document.getElementById("number").value;
     index = document.getElementById("index").value;
+    document.getElementById("number").value = "";
+    document.getElementById("index").value = "";
     list.insertAt(insert, index);
     console.log(this.list);
 
 }
 function addEnd(){
     end = document.getElementById("end").value;
+    document.getElementById("end").value = "";
     list.add(end);
     console.log(this.list);
 
@@ -180,6 +173,7 @@ function removeBegin(){
 }
 function removeAt(){
     remove = document.getElementById("rIndex").value;
+    document.getElementById("rIndex").value = "";
     list.removeFrom(remove);
     console.log(this.list);
 
@@ -346,22 +340,10 @@ function input(){
     number1 = document.getElementById("number1").value;
     listDL.add(number1)
     console.log(this.listDL)
-
-    number2 = document.getElementById("number2").value;
-    listDL.add(number2)
-    console.log(this.listDL)
-
-    number3 = document.getElementById("number3").value;
-    listDL.add(number3)
-    console.log(this.listDL)
-
-    number4 = document.getElementById("number4").value;
-    listDL.add(number4)
-    console.log(this.listDL)
-
 }
 
 function enter(){
+    document.getElementById("number1").value = "";
     var print = listDL.printList()
     document.getElementById("printList").textContent = print
     console.log(print);
@@ -369,17 +351,21 @@ function enter(){
 function addBegin(){
     begin = document.getElementById("begin").value;
     listDL.insertAt(begin, 0);
+    document.getElementById("begin").value = "";
     console.log(this.listDL);              
 }
 function addAt(){
     insert = document.getElementById("number").value;
     index = document.getElementById("index").value;
+    document.getElementById("number").value = "";
+    document.getElementById("index").value = "";
     listDL.insertAt(insert, index);
     console.log(this.listDL);
 
 }
 function addEnd(){
     end = document.getElementById("end").value;
+    document.getElementById("end").value = "";
     listDL.add(end);
     console.log(this.listDL);
 
@@ -391,6 +377,7 @@ function removeBegin(){
 }
 function removeAt(){
     remove = document.getElementById("rIndex").value;
+    document.getElementById("rIndex").value = "";
     listDL.removeFrom(remove);
     console.log(this.listDL);
 

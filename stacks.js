@@ -1,20 +1,15 @@
 function Stack() {
 
     var items = [];
+    this.top = 0;
 
     this.push = function(element){
         items.push(element);
     };
  
     this.popElement = function(){
-        // if((items.length - 1) >= 0){
-        //     poppedItem = items[items.length-1]
-        //     // items[items.length - 1] = undefined
-        //     items.length -= 1
-        // return poppedItem , items;
-        // }
-        return items.pop(items.length-1);
-        // return null;
+         popped =  items.pop();
+         return popped;
     };
  
     this.peek = function(){
@@ -45,18 +40,7 @@ function input(){
     number1 = document.getElementById("number1").value;
     stack.push(number1)
     console.log(this.stack)
-
-    number2 = document.getElementById("number2").value;
-    stack.push(number2)
-    console.log(this.stack)
-
-    number3 = document.getElementById("number3").value;
-    stack.push(number3)
-    console.log(this.stack)
-
-    number4 = document.getElementById("number4").value;
-    stack.push(number4)
-    console.log(this.stack)
+    document.getElementById("number1").value = "";
 
 }
 
@@ -87,12 +71,15 @@ function size(){
 function pop(){
     stack.popElement()
     console.log(this.stack.popElement())
+    var print = stack.print()
+    document.getElementById("printStack").textContent = print;
 }
 
 function push(){
     pushStack = document.getElementById("new").value;
     stack.push(pushStack)
     console.log(this.stack)
+    document.getElementById("new").value = "";
 }
 
 

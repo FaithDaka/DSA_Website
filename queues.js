@@ -41,18 +41,7 @@ function input(){
     number1 = document.getElementById("number1").value;
     queue.enqueue(number1)
     console.log(this.queue)
-
-    number2 = document.getElementById("number2").value;
-    queue.enqueue(number2)
-    console.log(this.queue)
-
-    number3 = document.getElementById("number3").value;
-    queue.enqueue(number3)
-    console.log(this.queue)
-
-    number4 = document.getElementById("number4").value;
-    queue.enqueue(number4)
-    console.log(this.queue)
+    document.getElementById("number1").value = "";
 
 }
 
@@ -84,9 +73,12 @@ function push(){
     pushQueue = document.getElementById("new").value;
     queue.enqueue(pushQueue)
     console.log(this.queue)
+    document.getElementById("new").value = "";
 }
 
 function pop(){
     queue.dequeue()
     console.log(queue.dequeue())
+    var print = queue.printQueue()
+    document.getElementById("printQueue").textContent = print;
 }

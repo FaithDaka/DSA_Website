@@ -152,34 +152,35 @@ function enter(){
     var print = printA(arr);
     document.getElementById("printArray").textContent = print
     console.log(print);
+    document.getElementById("number").value = "";
 }
 
 function bubble(){
-    var bubble = bubble_Sort(arr)
+    var bubble = bubble_Sort(this.arr)
     document.getElementById("bubbleAnswer").textContent = printA(bubble);
     console.log(bubble)
 }
 
 function selection(){
-    var select = Selection_Sort(arr)
+    var select = Selection_Sort(this.arr)
     document.getElementById("selectAnswer").textContent = printA(select);
     console.log(select)
 }
 
 function insertion(){
-    var insert = Insertion_Sort(arr)
+    var insert = Insertion_Sort(this.arr)
     document.getElementById("insertAnswer").textContent = printA(insert);
     console.log(insert)
 }
 
 function quick(){
-    var quick = Quick_Sort(arr)
+    var quick = Quick_Sort(this.arr)
     document.getElementById("quickAnswer").textContent = printA(quick);
     console.log(quick)
 }
 
 function merge(){
-    var merge = Merge_Sort(arr)
+    var merge = Merge_Sort(this.arr)
     document.getElementById("mergeAnswer").textContent = printA(merge);
     console.log(merge)
 }
