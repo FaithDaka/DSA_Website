@@ -17,7 +17,7 @@ startBtn.onclick = function () {
     console.log("moves_list: ", moves_list)
     start();
 
-})
+}
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
