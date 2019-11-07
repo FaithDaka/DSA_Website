@@ -4,7 +4,9 @@ var auxBar;
 var destBar;
 var moves_list = [];
 
-$("#start").click(function () {
+var startBtn = document.querySelector("#start");
+
+startBtn.onclick = function () {
     disks = document.getElementById("discnoBox").value;
     sourceBar = document.getElementById("startBox").value;
     auxBar = document.getElementById("auxBox").value;
