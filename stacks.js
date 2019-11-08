@@ -70,7 +70,7 @@ function size(){
 
 function pop(){
     stack.popElement()
-    console.log(this.stack.popElement())
+    console.log(stack.popElement())
     var print = stack.print()
     document.getElementById("printStack").textContent = print;
 }

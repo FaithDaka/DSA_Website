@@ -9,46 +9,34 @@ function printA(array){
 }
 
 function bubble_Sort(arrayB) {
-        this.swap = function(arrayB, index1, index2){
-            var value1 = arrayB[index1]
-            arrayB[index1] = arrayB[index2]
-            arrayB[index2] = value1
-        }
-        this.bubbleSort = function(){
-            for (var i in [...arrayB.keys()].slice(1, arrayB.length)){ // to run n-1 times
-                for (var i = 0; i < arrayB.length; i++){
-                    // console.log(i)
-                    try{
-                        if (arrayB[i] > arrayB[(i + 1)]){
-                            swap(arrayB, i, i + 1)
-                        }
-                    }
-                    catch(er){
-                        
-                    }
-                }
-            }
-            console.log("new array: ", arrayB)
-            return arrayB;
+var swapped;
+do{
+    swapped = false;
+    for(var i = 0; i<arrayB.length; i++){
+        if(arrayB[i] && arrayB[i+1] && arrayB[i]>arrayB[i+1]){
+            var temp = arrayB[i]
+            arrayB[i] = arrayB[i+1];
+            arrayB[i+1] = temp;
         }
     }
+}while(swapped);
+
+    return arrayB;
+}
 
 
 function InsertionSort(arrayI){
+for(var i = 0; i<arrayI.length; i++){
+    var temp = arrayI[i];
+    var j = i-1;
 
-	this.sort = function(){
-		var n = arrayI.length
-	    for (var index = 1; index < n; index ++){
-	        var tmp = arrayI[index]
-	        var j = index
-	        while (j>0 && tmp < arrayI[j-1]){
-	            arrayI[j] = arrayI[j - 1]
-	            j = j - 1
-	        }
-            arrayI[j] = tmp
-	    }
-	    return arrayI;
-	}
+    while(j>= 0 && arrayI[j]>temp){
+        arrayI[j+1] = arrayI[j];
+        j--;
+    }
+    arrayI[j+1] = temp;
+}
+    return arrayI;
 }
 
 function Quick_Sort(arrayQ){
@@ -75,26 +63,21 @@ function Quick_Sort(arrayQ){
     }
 }
 
-function SelectionSort(){
-	this.swap = function(array, index1, index2){
-	    var value1 = array[index1]
-	    array[index1] = array[index2]
-	    array[index2] = value1
-	}
-    
-    this.sort = function(arrayS){
-		var array_size = arrayS.length
-	    for (var index = 0; index < array_size; index ++){
-	        this.swap(
-	        	arrayS, 
-	        	arrayS.indexOf(
-	        		Math.min(...arrayS.slice(index, array_size))
-        		),
-        		index
-	        )
-    	}
-        return arrayS;
-	}
+function SelectionSort(arrayS){
+for(var i = 0; i<arrayS.length; i++){
+    var min = i;
+    for(var j = i+1; j<arrayS.length; j++){
+        if(arrayS[j] <arrayS[min]){
+            min = j;
+        }
+    }
+    if(i != min){
+        var temp = arrayS[i]
+            arrayS[i] = arrayS[min];
+            arrayS[min] = temp;
+    }
+}
+return arrayS;
 }
 
 function merger(left, right){
@@ -135,8 +118,7 @@ function enter(){
 function bubble(){
     var before = new Date();
 
-    var BubbleSort = new bubble_Sort(arr)
-    var bubble = BubbleSort.bubbleSort(arr);
+    var bubble = bubble_Sort(arr.slice());
     document.getElementById("bubbleAnswer").textContent = printA(bubble);
     console.log(bubble);
 
@@ -149,8 +131,7 @@ function bubble(){
 function selection(){
     var before = new Date();
 
-    var selectionSort = new SelectionSort();
-    var select = selectionSort.sort(arr)
+    var select = SelectionSort(arr.slice())
     document.getElementById("selectAnswer").textContent = printA(select);
     console.log(select);
 
@@ -163,8 +144,7 @@ function selection(){
 function insertion(){
     var before = new Date();
 
-    var insertionSort = new InsertionSort(arr);
-    var insert = insertionSort.sort(arr);
+    var insert = InsertionSort(arr.slice());
     document.getElementById("insertAnswer").textContent = printA(insert);
     console.log(insert);
 
@@ -177,7 +157,7 @@ function insertion(){
 function quick(){
     var before = new Date();
 
-    var quick = Quick_Sort(arr)
+    var quick = Quick_Sort(arr.slice())
     document.getElementById("quickAnswer").textContent = printA(quick);
     console.log(quick);
 
@@ -190,7 +170,7 @@ function quick(){
 function merge(){
     var before = new Date();
 
-    var merge = Merge_Sort(arr)
+    var merge = Merge_Sort(arr.slice())
     document.getElementById("mergeAnswer").textContent = printA(merge);
     console.log(merge)
 
